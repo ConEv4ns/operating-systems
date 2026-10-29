@@ -1,4 +1,5 @@
 global loader
+extern kmain
 
 MAGIC_NUMBER equ 0x1BADB002
 FLAGS equ 0x0
@@ -13,7 +14,7 @@ dd CHECKSUM
 
 loader:
 
-    mov eax, 0xCAFEBABE
+    call kmain
 
 .loop:
     jmp .loop
